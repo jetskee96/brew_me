@@ -1,0 +1,7 @@
+%h1= @brew.name
+%p= @brew.description
+%p= @brew.location
+%p= @brew.tagger
+= link_to "Back", root_path
+= link_to "Edit", edit_brew_path
+= link_to "Delete", brew_path, method: :delete, data: { confirm: "Are you sure?" }

@@ -1,0 +1,22 @@
+= simple_form_for @brew, html: { multipart: true } do |f|
+  - if @brew.errors.any?
+    #errors
+      %h2
+      = pluralize(@brew.errors.count, "error")
+      prevented this Brew from being added
+      %ul
+        - @brew.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.input :name, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :description, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :location, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :tagger, input_html: { class: 'form-control' }
+    
+  = f.button :submit, class: "btn btn-primary"
+        
+      
